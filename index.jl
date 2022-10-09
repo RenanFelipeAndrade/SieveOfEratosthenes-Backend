@@ -1,3 +1,4 @@
+using BenchmarkTools
 function main()
   maxRange = 10000000
   sieveVec = Vector{UInt128}()
@@ -5,12 +6,13 @@ function main()
   for _ = 1:floor(maxRange / 128)+1
     push!(sieveVec, calc)
   end
-  for x::UInt128 = 1:sqrt(maxRange)
-    sieveOfEratosthenes(x, sieveVec)
-  end
+  sieveOfEratosthenes(uint128"1", sieveVec, maxRange)
 end
 
-function sieveOfEratosthenes(number::UInt128, sieve::Vector{UInt128})
+"""
+Calculate primes from 0 to maxRange
+"""
+function sieveOfEratosthenes(number::UInt128, sieve::Vector{UInt128}, maxRange)
   rest::UInt128 = number % 128
   intDiv::UInt128 = floor(number / 128) + 1
   shift::UInt128 = (uint128"1" << rest)
@@ -28,7 +30,10 @@ function sieveOfEratosthenes(number::UInt128, sieve::Vector{UInt128})
       composite += number
     end
   end
+  if number <= sqrt(maxRange)
+    sieveOfEratosthenes(number + uint128"1", sieve, maxRange)
+  end
 end
 
 
-@time main()
+@btime main()
