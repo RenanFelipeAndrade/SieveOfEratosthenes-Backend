@@ -1,19 +1,16 @@
-maxRange = 100000000
-sieveVec = Vector{UInt128}()
-
-
-
 function main()
+  maxRange = 10000000
+  sieveVec = Vector{UInt128}()
   calc::UInt128 = 2^128 - uint128"1"
-  for i = 1:floor(maxRange / 128)+1
+  for _ = 1:floor(maxRange / 128)+1
     push!(sieveVec, calc)
   end
   for x::UInt128 = 1:sqrt(maxRange)
-    sieveOfEratosthenes(x, sieveVec, 0)
+    sieveOfEratosthenes(x, sieveVec)
   end
 end
 
-function sieveOfEratosthenes(number::UInt128, sieve::Vector{UInt128}, position)
+function sieveOfEratosthenes(number::UInt128, sieve::Vector{UInt128})
   rest::UInt128 = number % 128
   intDiv::UInt128 = floor(number / 128) + 1
   shift::UInt128 = (uint128"1" << rest)
@@ -33,7 +30,5 @@ function sieveOfEratosthenes(number::UInt128, sieve::Vector{UInt128}, position)
   end
 end
 
-main()
 
-
-println(bitstring(sieveVec[length(sieveVec)]))
+@time main()
