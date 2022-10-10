@@ -1,17 +1,13 @@
-using BenchmarkTools
 function main()
   maxRange::UInt128 = 100000000
-  calc::UInt128 = 2^128 - uint128"1"
+  sieveAsElement::UInt128 = (uint128"1" << 128) - 1
   # initializes a vector of n size 
   sieveVec = Vector{UInt128}(undef, fld(maxRange, 128) + 1)
-  fill!(sieveVec, calc)
+  fill!(sieveVec, sieveAsElement)
 
   sieveOfEratosthenes(uint128"1", sieveVec, maxRange)
 end
 
-"""
-Calculate primes from 0 to maxRange
-"""
 function sieveOfEratosthenes(number::UInt128, sieve::Vector{UInt128}, maxRange)
   rest::UInt128 = (number % 128) - 1
   intDiv = fld(number, 128) + 1
@@ -36,4 +32,4 @@ function sieveOfEratosthenes(number::UInt128, sieve::Vector{UInt128}, maxRange)
 end
 
 
-@btime main()
+@time main()
