@@ -23,4 +23,4 @@ route("/number/:number") do
   return JSON.json(primes)
 end
 
-up(port=8000, async=false)
+Genie.Server.up(8080, "0.0.0.0", async=false)
