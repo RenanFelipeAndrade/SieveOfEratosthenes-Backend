@@ -1,0 +1,11 @@
+services:
+  server:
+    container_name: sieve_server
+
+    image: julia
+    volumes:
+      - ./:/sieve_server
+    working_dir: /sieve_server
+    ports:
+      - "8000:8080"
+    command: bash -c "julia -e 'using Pkg; Pkg.activate(@__DIR__); Pkg.instantiate()' && julia --project=. ./server.jl"
