@@ -25,7 +25,7 @@ Once the server is running, any GET request on `/number/{number}`, where {number
 
 #### Example
 
-To calculate all primes from 2 to 100
+To calculate all primes from 2 to 25
 
 ```bash
 curl "http://localhost:8000/number/25"
@@ -39,7 +39,7 @@ The response will be an array with primes
 
 ### The Algorithm
 
-All prime numbers are calculated with the sieve of eratosthenes algorithm, wich consists in find all composite numbers within a range
+All prime numbers are calculated with the Sieve Of Eratosthenes algorithm, wich consists in find all composite numbers within a range
 
 #### Brief description
 
