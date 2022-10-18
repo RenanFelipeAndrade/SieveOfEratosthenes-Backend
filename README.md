@@ -13,7 +13,7 @@ Inside the directory of the project, run
 docker-compose up
 ```
 
-And that is it! The server will be runnig at [localhost:8000](http://localhost:8000)
+And that is it! The server will be running at [localhost:8000](http://localhost:8000)
 
 ## About the project
 
@@ -39,12 +39,12 @@ The response will be an array with primes
 
 ### The Algorithm
 
-All prime numbers are calculated with the Sieve Of Eratosthenes algorithm, wich consists in find all composite numbers within a range
+All prime numbers are calculated with the Sieve Of Eratosthenes algorithm, which consists in find all composite numbers within a range
 
 #### Brief description
 
 1. Write all numbers from 2 to N.
-2. Take the first number and find its multiples, they're composities by definition (has 2 distinct divisors)
+2. Take the first number and find its multiples, they're composites by definition (has 2 distinct divisors)
 3. Take the first number that hasn't been marked as composite, consider it's prime
 4. From that prime number, run through all its multiples up to N and mark them as composites
 5. Repeat from step 3.
