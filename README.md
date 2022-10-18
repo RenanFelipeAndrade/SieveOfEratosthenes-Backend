@@ -48,3 +48,25 @@ All prime numbers are calculated with the Sieve Of Eratosthenes algorithm, which
 3. Take the first number that hasn't been marked as composite, consider it's prime
 4. From that prime number, run through all its multiples up to N and mark them as composites
 5. Repeat from step 3.
+
+## Contributors
+
+<div>
+<strong>Renan Andrade</strong>
+<br />
+Student at Instituto Federal Catarinense
+<br />
+
+[Telegram](https://t.me/renanandrad); [Github](https://github.com/RenanFelipeAndrade)
+
+</div>
+
+<div>
+<strong>Gustavo Ferreira</strong>
+<br />
+Student at Universidade de São Paulo
+<br />
+
+[Telegram](https://t.me/gusferreira1203); [Github](https://github.com/gusferreira1203)
+
+</div>
