@@ -15,9 +15,9 @@ docker-compose up
 
 And that is it! The server will be running at [localhost:8080](http://localhost:8080)
 
-The command will also run the web client container. If you want to
-have it running properly, make sure to follow the steps on
-[the web client reposotory](https://github.com/RenanFelipeAndrade/sieve-of-eratosthenes-web)
+The command will can also run the web client container. If you
+want to have it running properly, make sure to follow the steps
+on [the web client reposotory](https://github.com/RenanFelipeAndrade/sieve-of-eratosthenes-web)
 
 ## About the project
 
