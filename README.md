@@ -13,22 +13,30 @@ Inside the directory of the project, run
 docker-compose up
 ```
 
-And that is it! The server will be running at [localhost:8000](http://localhost:8000)
+And that is it! The server will be running at [localhost:8080](http://localhost:8080)
+
+The command will also run the web client container. If you want to
+have it running properly, make sure to follow the steps on
+[the web client reposotory](https://github.com/RenanFelipeAndrade/sieve-of-eratosthenes-web)
 
 ## About the project
 
-This is a simple julia project. It exposes a api to calculate prime numbers up to a range.
+This is a simple julia project. It exposes an endpoint to
+calculate prime numbers up to a range. This project has a web
+client as already mentioned, if you want, checkout [the web client repository](https://github.com/RenanFelipeAndrade/sieve-of-eratosthenes-web) but is not necessary to run the server
 
 ### The api
 
-Once the server is running, any GET request on `/number/{number}`, where {number} is the range's limit starting from 2.
+Once the server is running, it will listen to GET request on
+`http://localhost:8080/number/{number}`, where {number} is the
+range limit that starts at 2.
 
 #### Example
 
 To calculate all primes from 2 to 25
 
 ```bash
-curl "http://localhost:8000/number/25"
+curl "http://localhost:8080/number/25"
 ```
 
 The response will be an array with primes

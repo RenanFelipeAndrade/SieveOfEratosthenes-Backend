@@ -6,7 +6,7 @@ services:
     volumes:
       - ./:/sieve_server
     ports:
-      - "8000:8080"
+      - "8080:8080"
     command: bash -c "julia -e 'using Pkg; Pkg.activate(@__DIR__); Pkg.instantiate()' && julia --project=. ./server.jl"
 
   sieve_web:
